@@ -56,19 +56,3 @@ spec:
     app: kuard
   sessionAffinity: None
   type: NodePort
----
-apiVersion: v1
-kind: Service
-metadata:
-  labels:
-    app: kuard-lb
-  name: kuard-lb
-spec:
-  ports:
-  - port: 80
-    protocol: TCP
-    targetPort: 8080
-  selector:
-    app: kuard
-  sessionAffinity: None
-  type: LoadBalancer

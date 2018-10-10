@@ -20,7 +20,8 @@ helm install --namespace kube-system --name heapster stable/heapster
 ```
 # ALB ingress
 ```
-aws iam put-role-policy --role-name <EKS-CLUSTER-NAME-DefaultNodeGroup-NodeInstanceRole-ID>  --policy-name mab-test-alb-ingress-extra --policy-document file://iam-policy.json
+aws iam put-role-policy --role-name <EKS-CLUSTER-NAME-DefaultNodeGroup-NodeInstanceRole-ID>  \
+    --policy-name mab-test-alb-ingress-extra --policy-document file://iam-policy.json
 kubectl apply -f albrbac.yaml
 kubectl apply -f alb-ingress-controller.yaml
 ```
